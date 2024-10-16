@@ -18,3 +18,12 @@ This project provides a RESTful service that calculates and returns all the prim
 - Support varying return content types (e.g., **XML**) configurable using the requested media type.
 - Consider performance improvements, such as **caching** results or using a **concurrent algorithm**.
 - Support multiple algorithms that can be switched based on optional parameters.
+
+## Swagger API Documentation
+The API is documented using **Swagger**, and you can view and interact with the API through the Swagger UI.
+
+You can access the hosted Swagger documentation here:
+
+[Hosted Swagger UI](https://your-app-url/swagger-ui/index.html)
+
+This link allows you to explore the available API endpoints and test them directly.
