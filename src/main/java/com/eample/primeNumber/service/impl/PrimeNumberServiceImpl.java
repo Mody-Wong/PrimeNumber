@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Slf4j
@@ -22,7 +21,6 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
             PrimeNumberResponse response = new PrimeNumberResponse();
             response.setPrimeNumber(primeList(input));
             response.setInput(input);
-            response.setSysDate(LocalDate.now());
             return response;
         } else {
             throw new NegativeNumberException("Negative numbers are not allowed: " + input);
@@ -33,7 +31,7 @@ public class PrimeNumberServiceImpl implements PrimeNumberService {
 
         ArrayList<Integer> primeNumbers = new ArrayList<>();
 
-        if (input == 0 || input == 1) {
+        if (input <= 1) {
             return primeNumbers;
         } else {
             primeNumbers.add(2);
