@@ -1,6 +1,6 @@
-package com.eample.primeNumber.exceptions.handler;
+package com.example.primeNumber.exceptions.handler;
 
-import com.eample.primeNumber.exceptions.NegativeNumberException;
+import com.example.primeNumber.exceptions.NegativeNumberException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

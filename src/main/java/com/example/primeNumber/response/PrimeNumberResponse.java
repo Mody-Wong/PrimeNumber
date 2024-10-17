@@ -1,4 +1,4 @@
-package com.eample.primeNumber.response;
+package com.example.primeNumber.response;
 
 import lombok.*;
 

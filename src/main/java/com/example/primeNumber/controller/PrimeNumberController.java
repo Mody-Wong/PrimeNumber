@@ -1,8 +1,8 @@
-package com.eample.primeNumber.controller;
+package com.example.primeNumber.controller;
 
-import com.eample.primeNumber.enums.Algorithm;
-import com.eample.primeNumber.response.PrimeNumberResponse;
-import com.eample.primeNumber.service.impl.PrimeNumberServiceImpl;
+import com.example.primeNumber.enums.Algorithm;
+import com.example.primeNumber.response.PrimeNumberResponse;
+import com.example.primeNumber.service.impl.PrimeNumberServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +35,7 @@ public class PrimeNumberController {
 
     )
 
-    @GetMapping("/primes")
+    @GetMapping(value = "/primes", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<PrimeNumberResponse> getPrimeNumber(
 
         @Schema(type = "integer", defaultValue = "10")

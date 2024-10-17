@@ -1,19 +1,19 @@
-package com.eample.primeNumber.service;
+package com.example.primeNumber.service;
 
-import com.eample.primeNumber.exceptions.NegativeNumberException;
-import com.eample.primeNumber.response.PrimeNumberResponse;
-import com.eample.primeNumber.service.impl.PrimeNumberServiceImpl;
+import com.example.primeNumber.exceptions.NegativeNumberException;
+import com.example.primeNumber.response.PrimeNumberResponse;
+import com.example.primeNumber.service.impl.PrimeNumberServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static com.eample.primeNumber.enums.Algorithm.TRIAL_DIVISION;
+import static com.example.primeNumber.enums.Algorithm.TRIAL_DIVISION;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
-public class PrimeNumberServiceTest {
+public class PrimeNumberInterfaceTest {
 
     @InjectMocks
     private PrimeNumberServiceImpl primeNumberService;

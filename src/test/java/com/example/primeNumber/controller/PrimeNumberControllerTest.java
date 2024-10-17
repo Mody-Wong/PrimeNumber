@@ -1,7 +1,7 @@
-package com.eample.primeNumber.controller;
+package com.example.primeNumber.controller;
 
-import com.eample.primeNumber.response.PrimeNumberResponse;
-import com.eample.primeNumber.service.impl.PrimeNumberServiceImpl;
+import com.example.primeNumber.response.PrimeNumberResponse;
+import com.example.primeNumber.service.impl.PrimeNumberServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.Validator;
 
 
-import static com.eample.primeNumber.enums.Algorithm.TRIAL_DIVISION;
+import static com.example.primeNumber.enums.Algorithm.TRIAL_DIVISION;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
