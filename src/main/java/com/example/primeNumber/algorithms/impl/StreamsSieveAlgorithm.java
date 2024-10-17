@@ -4,7 +4,7 @@ import com.example.primeNumber.algorithms.AlgorithmInterface;
 
 import java.util.ArrayList;
 
-public class ConcurrentSieveAlgorithm implements AlgorithmInterface {
+public class StreamsSieveAlgorithm implements AlgorithmInterface {
     @Override
     public ArrayList<Integer> getPrimeNumberArrayList(Integer input) {
         return null;
