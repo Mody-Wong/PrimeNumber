@@ -2,7 +2,6 @@ package com.example.primeNumber.service.impl;
 
 import com.example.primeNumber.algorithms.AlgorithmInterface;
 import com.example.primeNumber.algorithms.impl.ConcurrentSieveAlgorithm;
-import com.example.primeNumber.algorithms.impl.ConcurrentTrialDivisionAlgorithm;
 import com.example.primeNumber.algorithms.impl.SieveAlgorithm;
 import com.example.primeNumber.algorithms.impl.TrialDivisionAlgorithm;
 import com.example.primeNumber.enums.Algorithm;
@@ -39,10 +38,6 @@ public class PrimeNumberServiceImpl implements PrimeNumberInterface {
             }
             case SIEVE -> {
                 usedAlgorithm = new SieveAlgorithm();
-                yield usedAlgorithm.getPrimeNumberArrayList(input);
-            }
-            case CONCURRENT_TRIAL_DIVISION -> {
-                usedAlgorithm = new ConcurrentTrialDivisionAlgorithm();
                 yield usedAlgorithm.getPrimeNumberArrayList(input);
             }
             case CONCURRENT_SIEVE -> {
