@@ -1,15 +1,16 @@
 package com.eample.primeNumber.controller;
 
+import com.eample.primeNumber.enums.Algorithm;
 import com.eample.primeNumber.response.PrimeNumberResponse;
 import com.eample.primeNumber.service.impl.PrimeNumberServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -35,9 +36,17 @@ public class PrimeNumberController {
 
     @GetMapping("/primes")
     public ResponseEntity<PrimeNumberResponse> getPrimeNumber(
-            @Schema(type = "integer", defaultValue = "10")
-            @RequestHeader(name = "input") int input
+
+        @Schema(type = "integer", defaultValue = "10")
+        @RequestHeader(name = "input") int input,
+
+        @Parameter(
+            description = "Algorithm to calculate prime numbers",
+            schema = @Schema(implementation = Algorithm.class),
+            example = "TRIAL_DIVISION"
+        )
+        @RequestHeader(name = "algorithm", defaultValue = "trialDivision") Algorithm algorithm
     ){
-        return ResponseEntity.ok(primeNumberService.getPrimeNumber(input));
+        return ResponseEntity.ok(primeNumberService.getPrimeNumbers(input, algorithm));
     }
 }

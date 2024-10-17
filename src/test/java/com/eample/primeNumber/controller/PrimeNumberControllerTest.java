@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.validation.Validator;
 
 
+import static com.eample.primeNumber.enums.Algorithm.TRIAL_DIVISION;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -54,16 +55,17 @@ public class PrimeNumberControllerTest {
                 .input(Integer.parseInt(input))
                 .build();
 
-        when(primeNumberService.getPrimeNumber(Integer.valueOf(input))).thenReturn(response);
+        when(primeNumberService.getPrimeNumbers(Integer.valueOf(input), TRIAL_DIVISION)).thenReturn(response);
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("input", input);
+        headers.add("algorithm", String.valueOf(TRIAL_DIVISION));
 
         mockMvc.perform(get(primePath)
                         .headers(headers))
                 .andExpect(status().isOk());
 
-        verify(primeNumberService, times(1)).getPrimeNumber(any());
+        verify(primeNumberService, times(1)).getPrimeNumbers(any(), any());
     }
 
     @Test
@@ -71,11 +73,12 @@ public class PrimeNumberControllerTest {
     public void GivenMissingHeader_ShouldReturn400BadRequest() throws Exception {
 
         HttpHeaders headers = new HttpHeaders();
+        headers.add("algorithm", String.valueOf(TRIAL_DIVISION));
 
         mockMvc.perform(get(primePath)
                         .headers(headers))
                 .andExpect(status().isBadRequest());
 
-        verify(primeNumberService, times(0)).getPrimeNumber(any());
+        verify(primeNumberService, times(0)).getPrimeNumbers(any(), any());
     }
 }
