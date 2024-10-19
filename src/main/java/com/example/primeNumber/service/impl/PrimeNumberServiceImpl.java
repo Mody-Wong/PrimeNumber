@@ -1,9 +1,9 @@
 package com.example.primeNumber.service.impl;
 
 import com.example.primeNumber.algorithms.AlgorithmInterface;
-import com.example.primeNumber.algorithms.impl.ExecutorsSieveAlgorithm;
+import com.example.primeNumber.algorithms.impl.ConcurrentSieveAlgorithm;
 import com.example.primeNumber.algorithms.impl.SieveAlgorithm;
-import com.example.primeNumber.algorithms.impl.StreamsSieveAlgorithm;
+import com.example.primeNumber.algorithms.impl.AlteredConcurrentSieveAlgorithm;
 import com.example.primeNumber.algorithms.impl.TrialDivisionAlgorithm;
 import com.example.primeNumber.enums.Algorithm;
 import com.example.primeNumber.exceptions.NegativeNumberException;
@@ -41,12 +41,12 @@ public class PrimeNumberServiceImpl implements PrimeNumberInterface {
                 usedAlgorithm = new SieveAlgorithm();
                 yield usedAlgorithm.getPrimeNumberArrayList(input);
             }
-            case EXECUTORS_SIEVE -> {
-                usedAlgorithm = new ExecutorsSieveAlgorithm();
+            case CONCURRENT_SIEVE -> {
+                usedAlgorithm = new ConcurrentSieveAlgorithm();
                 yield usedAlgorithm.getPrimeNumberArrayList(input);
             }
-            case STREAMS_SIEVE -> {
-                usedAlgorithm = new StreamsSieveAlgorithm();
+            case ALTERED_CONCURRENT_SIEVE -> {
+                usedAlgorithm = new AlteredConcurrentSieveAlgorithm();
                 yield usedAlgorithm.getPrimeNumberArrayList(input);
             }
             default -> throw new IllegalArgumentException("Unknown algorithm: " + algorithm);

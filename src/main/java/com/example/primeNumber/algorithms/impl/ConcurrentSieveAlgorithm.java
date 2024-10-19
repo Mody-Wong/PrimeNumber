@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-public class ExecutorsSieveAlgorithm implements AlgorithmInterface {
+public class ConcurrentSieveAlgorithm implements AlgorithmInterface {
     @Override
     public ArrayList<Integer> getPrimeNumberArrayList(Integer input) {
 
