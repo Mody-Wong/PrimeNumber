@@ -11,6 +11,7 @@ import com.example.primeNumber.response.PrimeNumberResponse;
 import com.example.primeNumber.service.PrimeNumberInterface;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class PrimeNumberServiceImpl implements PrimeNumberInterface {
 
     @Override
+    @Cacheable(value = "primeNumbersCache", key = "#input + '-' + #algorithm")
     public PrimeNumberResponse getPrimeNumbers(Integer input, Algorithm algorithm) {
 
         if (input < 0) {
