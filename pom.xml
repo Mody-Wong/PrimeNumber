@@ -92,6 +92,9 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<finalName>
+						prime-number-app
+					</finalName>
 				</configuration>
 			</plugin>
 		</plugins>

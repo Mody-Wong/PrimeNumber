@@ -24,6 +24,6 @@ The API is documented using **Swagger**, and you can view and interact with the 
 
 You can access the hosted Swagger documentation here:
 
-[Hosted Swagger UI](https://your-app-url/swagger-ui/index.html)
+[Hosted Swagger UI](http://obm-env-1.eba-8qhgy4xm.eu-west-2.elasticbeanstalk.com/swagger-ui/index.html#/prime-number-controller/getPrimeNumber)
 
 This link allows you to explore the available API endpoints and test them directly.
