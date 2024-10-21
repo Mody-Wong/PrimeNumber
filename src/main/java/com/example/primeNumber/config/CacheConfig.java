@@ -2,8 +2,6 @@ package com.example.primeNumber.config;
 
 import com.github.benmanes.caffeine.cache.Caffeine;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.CachingConfigurerSupport;
-
 import org.springframework.cache.caffeine.CaffeineCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
-public class CacheConfig extends CachingConfigurerSupport {
+public class CacheConfig{
 
     @Bean
     public Caffeine<Object, Object> caffeineConfig() {
@@ -21,10 +19,9 @@ public class CacheConfig extends CachingConfigurerSupport {
     }
 
     @Bean
-    @Override
-    public CacheManager cacheManager() {
+    public CacheManager cacheManager(Caffeine<Object, Object> caffeine) {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager("primeNumbersCache");
-        cacheManager.setCaffeine(caffeineConfig());
+        cacheManager.setCaffeine(caffeine);
         return cacheManager;
     }
 }

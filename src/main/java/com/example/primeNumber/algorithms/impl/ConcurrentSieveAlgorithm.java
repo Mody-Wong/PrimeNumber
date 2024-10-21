@@ -69,7 +69,7 @@ public class ConcurrentSieveAlgorithm implements AlgorithmInterface {
         @Override
         public Void call() {
             // Printing for curiosity
-            System.out.println("Processing prime: " + p + " in thread: " + Thread.currentThread().getName());
+//            System.out.println("Processing prime: " + p + " in thread: " + Thread.currentThread().getName());
 
             // Mark multiples of p starting from p * p
             for (int i = p * p; i <= input; i += p) {

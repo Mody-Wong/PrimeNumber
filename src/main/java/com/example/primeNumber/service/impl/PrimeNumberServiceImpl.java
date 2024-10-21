@@ -29,6 +29,10 @@ public class PrimeNumberServiceImpl implements PrimeNumberInterface {
             throw new NegativeNumberException("Negative numbers are not allowed: " + input);
         }
 
+        if (algorithm == null) {
+            throw new IllegalArgumentException("Algorithm cannot be null.");
+        }
+
         PrimeNumberResponse response = new PrimeNumberResponse();
         ArrayList<Integer> primeNumbers;
         AlgorithmInterface usedAlgorithm;
@@ -55,7 +59,7 @@ public class PrimeNumberServiceImpl implements PrimeNumberInterface {
         };
 
         // Set the response data
-        response.setPrimeNumber(primeNumbers);
+        response.setPrimeNumbers(primeNumbers);
         response.setInput(input);
         return response;
     }

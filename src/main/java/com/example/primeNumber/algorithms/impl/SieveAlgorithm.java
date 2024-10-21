@@ -2,7 +2,6 @@ package com.example.primeNumber.algorithms.impl;
 
 import com.example.primeNumber.algorithms.AlgorithmInterface;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class SieveAlgorithm implements AlgorithmInterface {
@@ -10,7 +9,7 @@ public class SieveAlgorithm implements AlgorithmInterface {
     public ArrayList<Integer> getPrimeNumberArrayList(Integer input) {
 
         boolean[] isPrime = new boolean[input + 1];
-        // new boolean[] defaults to False in the boolean Array
+//         new boolean[] defaults to False in the boolean Array
 
         for (int i = 2; i <= input; i++){
             isPrime[i] = true;
@@ -18,7 +17,7 @@ public class SieveAlgorithm implements AlgorithmInterface {
 
         for (int p = 2; p * p <= input; p++){
             if (isPrime[p]) {
-                // starting at p * p because all smaller p has already been marked by previous iteration
+//                 starting at p * p because all smaller p has already been marked by previous iteration
                 for (int i = p * p; i <= input; i += p) {
                     isPrime[i] = false;
                 }

@@ -17,7 +17,7 @@ public class TrialDivisionAlgorithm implements AlgorithmInterface {
                 int num = 2 * i + 1;
                 boolean isPrime = true;
 
-                // Check divisibility by the already identified prime numbers only
+//                 Check divisibility by the already identified prime numbers only
                 for (int prime : primeNumbers) {
                     if (prime * prime > num) {
                         break; // No need to check further if prime^2 > num
@@ -33,6 +33,7 @@ public class TrialDivisionAlgorithm implements AlgorithmInterface {
                 }
             }
         }
+        System.out.println("Done");
         return primeNumbers;
     }
 }
