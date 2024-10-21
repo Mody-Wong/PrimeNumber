@@ -47,7 +47,7 @@ public class AlteredConcurrentSieveAlgorithm implements AlgorithmInterface {
         List<Callable<Void>> tasks = new ArrayList<>();
         for (int prime : primesUpToSqrt) {
             tasks.add(() -> {
-                System.out.println("Marking multiples of prime: " + prime);
+//                System.out.println("Marking multiples of prime: " + prime);
 
                 for (int j = prime * prime; j <= input; j += prime) {
                     isPrime[j] = false;
